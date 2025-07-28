@@ -21,14 +21,23 @@
             background: #fff;
             padding: 2.5rem 2rem;
             border-radius: 1rem;
-            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0.5rem #C453B1, 0 0 .5rem #C453B1;
             width: 100%;
             max-width: 450px;
         }
 
         .form-control:focus {
             box-shadow: none;
-            border-color: #6c63ff;
+            border-color: #36393b;
+        }
+
+        button {
+            background: linear-gradient(135deg, #C453B1, #822a73, #502e4a);
+            transition: .5s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #502e4a, #822a73, #c453b1);
         }
 
         .form-label {
@@ -36,7 +45,7 @@
         }
 
         .input-group-text .fa {
-            color: #2462eb;
+            color: #822a73;
             width: 18px;
         }
 
@@ -47,8 +56,8 @@
 </head>
 
 <body>
-    <div class="register-container shadow">
-        <h3 class="mb-4 text-center">Register</h3>
+    <div class="register-container">
+        <h3 class="mb-4 text-center">Register Here</h3>
         <form action="" onsubmit="return register()">
             <div class="mb-3 input-group">
                 <span class="input-group-text"><i class="fa fa-user"></i></span>
@@ -64,13 +73,15 @@
             </div>
             <div class="mb-3 input-group">
                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
+                <input type="password" class="form-control" placeholder="Password" name="password" id="password"
+                    required>
             </div>
             <div class="mb-3 input-group">
                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Confirm Password" name="conf_password" id="conf_password" required>
+                <input type="password" class="form-control" placeholder="Confirm Password" name="conf_password"
+                    id="conf_password" required>
             </div>
-            <button type="submit" class="btn btn-success w-100"><i
+            <button type="submit" class="btn text-light w-100"><i
                     class="fa-solid fa-right-to-bracket"></i>Register</button>
             <div class="mt-3 text-center">
                 <small>Already have an account?<a href="login.html">Login</a></small>
@@ -90,10 +101,10 @@
             // for leading and trailiing white space
             const trimname = name.trim();
             const trimemail = email.trim();
-            const trimphone= phone.trim();
+            const trimphone = phone.trim();
             const trimpassword = password.trim();
             const trimconf_password = conf_password.trim();
-    
+
             // pattern for fullname and mail and contact number
             const fullnameRegex = /^[a-zA-Z\s]+$/;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -115,20 +126,20 @@
                 return false;
             }
 
-              if (password !== trimpassword) {
+            if (password !== trimpassword) {
                 alert('Password cannot have leading or trailing whitespace');
                 return false;
             }
 
             //Validate username format
             if (!fullnameRegex.test(name)) {
-               alert("Fullname can only contain letters");
+                alert("Fullname can only contain letters");
                 return false;
             }
 
             // email validation
             if (!emailRegex.test(email)) {
-                 alert("Enter a valid email address.");
+                alert("Enter a valid email address.");
                 return false;
             }
             // phone no validation
@@ -137,19 +148,19 @@
                 return false;
             }
             // password validation
-             if (!passwordPattern.test(password)) {
+            if (!passwordPattern.test(password)) {
                 alert("Password must include atleast a uppercase, a lowercase, a digit and a special character(!@#$%&*)");
                 return false;
             }
 
-          
+
             if (password.length < 6) {
-               alert("Password should be contain atleast 6 character");
+                alert("Password should be contain atleast 6 character");
                 return false;
             }
 
             if (password !== conf_password) {
-               alert ("Passwords didn't match, enter correct password!");
+                alert("Passwords didn't match, enter correct password!");
                 return false;
             }
             alert("form submitted successfully");

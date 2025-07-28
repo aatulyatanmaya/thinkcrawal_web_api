@@ -21,19 +21,28 @@
             background: #fff;
             padding: 2.5rem 2rem;
             border-radius: 1rem;
-            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0.5rem #C453B1, 0 0 .5rem #C453B1;
             width: 100%;
             max-width: 400px;
         }
 
         .form-control:focus {
             box-shadow: none;
-            border-color: #2462eb;
+            border-color: #822a73;
+        }
+
+        button {
+            background: linear-gradient(135deg, #C453B1, #822a73,#502e4a);
+            color: white;
+            transition: .5s;
+        }
+         button:hover {
+            background: linear-gradient(135deg, #502e4a, #822a73, #c453b1);
         }
 
         .fa-user,
         .fa-lock {
-            color: #2462eb;
+            color: #822a73;
         }
 
         i {
@@ -43,8 +52,8 @@
 </head>
 
 <body>
-    <div class="login-container shadow">
-        <h3 class="mb-4 text-center">Login</h3>
+    <div class="login-container">
+        <h3 class="mb-4 text-center">Login Here</h3>
         <form action="" onsubmit="return login_info()">
             <div class="mb-3 input-group">
                 <span class="input-group-text"><i class="fa fa-user"></i></span>
@@ -58,10 +67,9 @@
                 <input type="checkbox" class="form-check-input" id="remember">
                 <label class="form-check-label" for="remember">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100"><i
-                    class="fa-solid fa-right-to-bracket"></i>Login</button>
+            <button type="submit" class="btn w-100 text-light"><i class="fa-solid fa-right-to-bracket"></i>Login</button>
             <div class="mt-3 text-center">
-                <a href="#">Forgot password?</a>
+                <a href="forget.html">Forgot password?</a>
                 <br>
                 <small>You don't have have accoun. <a href="register.html">signup here</a></small>
             </div>
@@ -97,7 +105,7 @@
                 alert("Password should be contain atleast 6 character");
                 return false;
             }
-             return true;
+            return true;
 
         }
     </script>
